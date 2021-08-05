@@ -1,10 +1,9 @@
 ---
-title: C++ Primer Plus 课后习题 第三章
-excerpt: 处理数据; 简单变量; const限定符; 浮点数; C++算数运算符; 总结
-index_img: /img/post/answer/cpp/chapter3.jpeg
+title: C++ Primer Plus 课后习题 第二章
+excerpt: 开始学习C++; 进入C++; C++语句; 其他C++语句; 函数; 总结
+index_img: /img/post/answer/cpp/chapter2.png
 date: 2021-08-04 9:00:00
 categories: [课后习题答案, C++ Primer Plus 6th]
-comments: true
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
