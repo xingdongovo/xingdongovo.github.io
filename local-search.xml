@@ -8,12 +8,12 @@
     <link href="/2021/09/05/asr-lm-smoothing-20210905/"/>
     <url>/2021/09/05/asr-lm-smoothing-20210905/</url>
     
-    <content type="html"><![CDATA[<h2 id="语言模型的平滑方法详解"><a href="#语言模型的平滑方法详解" class="headerlink" title="语言模型的平滑方法详解"></a>语言模型的平滑方法详解</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是n-gram模型"><a href="#什么是n-gram模型" class="headerlink" title="什么是n-gram模型"></a>什么是n-gram模型</h4><p>n-gram是一种统计语言模型，用于根据前n-1个信息量来预测第n个信息量。这些信息量可以是因素、语言词汇等。本文主要针对的是语音识别中的n-gram统计语言模型，常见的n-gram语言模型有unigram(1-gram), bigram(2-gram), trigram(3-gram), four-gram, five-gram。</p><p>在统计语言模型中，给定一个句子S= {$w_1$​, <script type="math/tex">w_2</script>​​} 一句话的概率可以按如下表达式计算：</p><script type="math/tex; mode=display">hh</script><h4 id="平滑的重要性"><a href="#平滑的重要性" class="headerlink" title="平滑的重要性"></a>平滑的重要性</h4>]]></content>
+    <content type="html"><![CDATA[<h2 id="语言模型的平滑方法详解"><a href="#语言模型的平滑方法详解" class="headerlink" title="语言模型的平滑方法详解"></a>语言模型的平滑方法详解</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="什么是n-gram模型"><a href="#什么是n-gram模型" class="headerlink" title="什么是n-gram模型"></a>什么是n-gram模型</h4><p>​        n-gram是一种统计语言模型，用于根据前n-1个信息量来预测第n个信息量。这些信息量可以是因素、语言词汇等。本文主要针对的是语音识别中的n-gram统计语言模型，常见的n-gram语言模型有unigram(1-gram), bigram(2-gram), trigram(3-gram), four-gram, five-gram。</p><p>在统计语言模型中，给定一个n个词汇组成的句子S= {$w_1$​​, $w_2$, $w_3$, …, $w_n$​​​}，这句话的概率可以按如下表达式计算：</p><script type="math/tex; mode=display">hh</script><h4 id="平滑的重要性"><a href="#平滑的重要性" class="headerlink" title="平滑的重要性"></a>平滑的重要性</h4>]]></content>
     
     
     <categories>
       
-      <category>语言识别</category>
+      <category>语音识别</category>
       
       <category>语言模型</category>
       
