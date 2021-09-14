@@ -234,8 +234,9 @@
 </li>
 <li><p>V 表示词典的总词汇数（去重）</p>
 </li>
-<li><p>N 表示训练语料库中的总词数（去重），一般而言$N\geq V$​.</p>
+<li><p>N 表示训练语料库中的总词数（去重），一般而言$N\geq V$​​.</p>
 </li>
+<li>$w^t_{t-n+1}$​​​表示字符序列$\{w_{t-n+1}, w_{t-n+2}, …, w_t\}$​</li>
 </ul>
 <h3 id="Laplace-smoothing-amp-Add-k-smoothing"><a href="#Laplace-smoothing-amp-Add-k-smoothing" class="headerlink" title="Laplace smoothing &amp; Add-k smoothing"></a>Laplace smoothing &amp; Add-k smoothing</h3><p><strong>Laplace平滑</strong>，又称为加1平滑(Add-1 Smoothing)，<strong>该方法会将所有的N-gram计数加上1</strong>，以避免出现零概率问题。之前计数为0的n-gram将变为1，计数为1的n-gram将变为2，以此类推。</p>
 <p>首先来回顾一下没有采用平滑方法时的<strong>unigram概率</strong>$P_{MLE}(w_t)$​​​​​计算方法，其中N​​​​表示训练语料库中的总词数：</p>
