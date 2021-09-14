@@ -926,7 +926,7 @@ N_{1+}(w^{i-1}_{i-n+1}.) = |\{v: C(w^{i-1}_{i-n+1}v)>0\}|</script><p><strong>对
 <script type="math/tex; mode=display">
 N_{1}(w^{i-1}_{i-n+1}.) = |\{v: C(w^{i-1}_{i-n+1}v)=1\}|</script><h3 id="Absolute-smoothing"><a href="#Absolute-smoothing" class="headerlink" title="Absolute smoothing"></a>Absolute smoothing</h3><p>绝对折扣法也采用了高低阶结合的思想来处理平滑，但不同于Jelinek-Mercer方法中高阶模型乘以折扣因子的做法，而是对高阶模型的计数减去一个统一的固定值$0\leq D \leq1$​：</p>
 <script type="math/tex; mode=display">
-P_{Abs}(w_t|w^{t-1}_{t-n+1}) = \frac{max(C(w^t_{t-n+1})-D, 0)}{C(w^{t-1}_{t-n+1})} + \lambda_{w^{t-1}_{t-n+1}}P_{Abs}(w_t|w^{t-1}_{t-n+2})</script><p><strong>$\lambda_{w^{t-1}_{t-n+1}}$​归一化参数计算</strong></p>
+P_{Abs}(w_t|w^{t-1}_{t-n+1}) = \frac{max(C(w^t_{t-n+1})-D, 0)}{C(w^{t-1}_{t-n+1})} + \lambda_{w^{t-1}_{t-n+1}}P_{Abs}(w_t|w^{t-1}_{t-n+2})</script><p><strong>$\lambda_{w^{t-1}_{t-n+1}}$​​归一化参数计算</strong></p>
 <p>对词频数较高的n-gram来说，减去一个小于1的值D对概率影响不大，因此这种做法主要是针对估计不准、词频数较低的情况。$\lambda_{w^{t-1}_{t-n+1}}$​为归一化参数，其计算式为：</p>
 <script type="math/tex; mode=display">
 1 - \lambda_{w^{t-1}_{t-n+1}} = \frac{D}{\sum_{w_i}{C(w^i_{i-n+1})}}N_{1+}(w^{t-1}_{t-n+1}.)</script><p><strong>减值系数D计算：</strong></p>
