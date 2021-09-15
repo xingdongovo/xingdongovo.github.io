@@ -261,7 +261,7 @@ P_{Laplace}(w_n|w_{n-1}) =  \frac{C(w_{n-1}w_n)+1}{\sum_w(C(w_{n-1}w)+1)} = \fra
 <script type="math/tex; mode=display">
 P_{Add-k}(w_t) = \frac{C(w_t)+k}{N+kV}. \quad 0 < k \leq 1</script><script type="math/tex; mode=display">
 P_{Add-k}(w_n|w_{n-1}) =  \frac{C(w_{n-1}w_n)+k}{\sum_w(C(w_{n-1}w)+k)} = \frac{C(w_{n-1}w_n)+k}{C(w_{n-k}) + kV}</script><p><strong>总结</strong></p>
-<p>Laplace平滑和Add-k平滑方法在实际应用中效果较差，因此一般将其作为基准版本(baseline)。或由此引入平滑算法中的一些基本概念。如:</p>
+<p>Laplace平滑和Add-k平滑方法在实际应用中效果较差，因此一般将其作为基准版本(baseline)。或由此引入平滑算法中的一些基本概念。如：</p>
 <ul>
 <li><p><strong>修正后的词频数</strong>: 考虑到上述平滑算法需要同时改变概率计算式的分母和分子，对照分析应用该平滑方法前后的词频数时不太方便，因此引入了修正后的词频数概念，目的是保持分母相同的情况下，方便观察词频数的变化情况。引入一个<strong>归一化参数</strong>$\frac{N}{N+V}$​​​，经Laplace平滑修正后的unigram词频数为$c^*(w_t) = (c(w_t) + 1)\frac{N}{N+V}$​​​​. </p>
 </li>
@@ -516,7 +516,7 @@ p(to|want) = \frac{p(want\,\,to)}{p(want)} = \frac{C(want\,\,to)}{C(want)} = \fr
 </tbody>
 </table>
 </div>
-<p>有了这张表我们就可以去计算句子”i want to eat chinese food“的概率了，假设我们的语言模型是基于bigram的：</p>
+<p>有了这张表我们就可以去计算句子”i want chinese food“的概率了，假设我们的语言模型是基于bigram的：</p>
 <script type="math/tex; mode=display">
 p(i\,\,want\,\,chinese\,\,food) = p(i|<s>)p(want|i)p(chinese|want)p(food|chinese)p(</s>|food)</script><p>其中&lt; s &gt;和&lt; /s &gt;分别用来建模句子的开头和句子结尾。</p>
 <ul>
@@ -864,7 +864,7 @@ r^* = \frac{(r+1)*N_{r+1}}{N_r}​</script><p>打折后 $\sum_r r^*N_r = \sum_r 
 <p>根据出现一次的事件的概率来估计未出现事件概率的思想源于：在一个较大的语料库中如十亿级别，如果某个词只出现了一次，那么它很有可能只是偶然出现，存在估计过高的问题，它的真实概率应远低于十亿分之一。这一假设对于出现二次或三次的词同样适用。但对于统计频次较高的词，则可以认为其统计次数是可靠的，可以不进行折扣。</p>
 <p><strong>让我们通过一些例子来了解Good-turing平滑的思想</strong>：</p>
 <p>首先针对unigram，假设现在我们现在有一个训练语料库，总词数N=1000词。训练语料库中出现1次的词有300个，出现次数2次的词有200个，出现3次的词有100个，出现0次的词剩余100个。</p>
-<p>引入平滑前，出现0次的unigram概率为$p(w) = \frac{r_w}{N} = \frac{0}{N} = 0$​​​，而引入Good-turing平滑后，出现0次的unigram的概率为$p(w) = \frac{r^*_w}{N}$，其中$r^*_w = \frac{(0+1)N_1}{N_0} = \frac{300}{100}$​，则​​$p(w) = \frac{3}{1000}$​.</p>
+<p>引入平滑前，出现0次的unigram概率为$p(w) = \frac{r_w}{N} = \frac{0}{N} = 0$​​​，而引入Good-turing平滑后，出现0次的unigram的概率为$p(w) = \frac{r^*_w}{N}$，其中$r^*_w = \frac{(0+1)N_1}{N_0} = \frac{300}{100}$​，则$p(w) = \frac{3}{1000}$​.</p>
 <p>同理，对于n-gram，我们首先统计语料库中n-gram总数，然后按次数对n-gram进行分类，再重新计数为0的n-gram的平滑次数以获得最终的概率。</p>
 <p><strong>Good-Turing实际使用中存在如下几个问题</strong>：</p>
 <ul>
